@@ -47,6 +47,8 @@ fn is_set_legal<T: Iterator<Item = u32>>(values: T) -> bool {
 /// Ingesting from a [&str], taking advantage of the [`FromStr`] trait implementation:
 ///
 /// ```
+/// use sudoku::Grid;
+///
 /// let puzzle: Grid = " \
 ///     003020600 \
 ///     900305001 \
@@ -64,6 +66,8 @@ fn is_set_legal<T: Iterator<Item = u32>>(values: T) -> bool {
 /// Ingesting from a `&[u32; 81]` array using [`from_array`](Grid::from_array):
 ///
 /// ```
+/// use sudoku::Grid;
+///
 /// let puzzle: Grid = Grid::from_array(&[
 ///     0, 0, 3, 0, 2, 0, 6, 0, 0, 9, 0, 0, 3, 0, 5, 0, 0, 1, 0, 0, 1, 8, 0, 6, 4, 0, 0, 0, 0,
 ///     8, 1, 0, 2, 9, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 6, 7, 0, 8, 2, 0, 0, 0, 0, 2, 6,
