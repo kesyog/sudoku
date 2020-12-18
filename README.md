@@ -34,6 +34,22 @@ let solution = puzzle.solve().expect("No solution found");
 println!("Solution:\n{}", solution);
 ```
 
+The above code will print:
+
+```plaintext
+483|921|657
+967|345|821
+251|876|493
+---+---+---
+548|132|976
+729|564|138
+136|798|245
+---+---+---
+372|689|514
+814|253|769
+695|417|382
+```
+
 Ingesting a `u32` array and reading the first digit of the solution:
 
 ```rust
@@ -45,5 +61,5 @@ let puzzle: Grid = Grid::from_array(&[
     0, 9, 5, 0, 0, 8, 0, 0, 2, 0, 3, 0, 0, 9, 0, 0, 5, 0, 1, 0, 3, 0, 0,
 ]);
 let solution = puzzle.solve().expect("No solution found");
-println!("The first digit is: {}", solution.as_slice()[0]);
+assert_eq!(4_u32, solution.as_slice()[0]);
 ```
