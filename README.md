@@ -6,9 +6,12 @@ on Project Euler.
 It uses a non-recursive backtracking (depth-first search) algorithm and returns the first solution
 found, if any.
 
-## Examples
+## Usage
 
-Use 0 to indicate an unknown cell.
+The full documentation is published [here](https://kesyog.github.io/sudoku), but the examples below
+should be clear enough to show how it works.
+
+### Examples
 
 Ingesting a string and pretty-printing the solution:
 
@@ -44,4 +47,3 @@ let puzzle: Grid = Grid::from_array(&[
 let solution = puzzle.solve().expect("No solution found");
 println!("The first digit is: {}", solution.as_slice()[0]);
 ```
-
