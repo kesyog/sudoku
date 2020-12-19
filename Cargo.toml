@@ -5,3 +5,9 @@ authors = ["Kesavan Yogeswaran <kesyog@gmail.com>"]
 edition = "2018"
 
 [dependencies]
+
+[dev-dependencies]
+rayon = "^1.5.0"
+
+[[example]]
+name = "p96"

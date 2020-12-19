@@ -1,10 +1,9 @@
 # sudoku 🔢
 
 A Sudoku solver in Rust written to shake off some Rust cobwebs and make some [progress](https://projecteuler.net/profile/kesyog.png)
-on Project Euler.
+on Project Euler problem 96 (and others) by implementing depth-first search (DFS).
 
-It uses a non-recursive backtracking (depth-first search) algorithm and returns the first solution
-found, if any.
+It uses a non-recursive backtracking algorithm and returns the first solution found, if any.
 
 ## Usage
 
@@ -63,3 +62,15 @@ let puzzle: Grid = Grid::from_array(&[
 let solution = puzzle.solve().expect("No solution found");
 assert_eq!(4_u32, solution.as_slice()[0]);
 ```
+
+## Solving Project Euler problem 96
+
+For an example of how to use the library to solve the Problem 96 dataset, run the following and
+check out the corresponding source code:
+
+```sh
+cargo run --release --example p96
+```
+
+This example also shows how to easily use parallel iterators provided by the [Rayon](https://github.com/rayon-rs/rayon)
+crate to speed up the trivially parallel problem of solving multiple Sudoku puzzles.
