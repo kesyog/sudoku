@@ -64,7 +64,6 @@
 //! assert_eq!(4_u32, solution.as_slice()[0]);
 //! ```
 
-use std::collections::HashSet;
 use std::convert::{From, TryInto};
 use std::fmt;
 use std::iter::{FromIterator, Iterator};
@@ -79,11 +78,13 @@ use std::str::FromStr;
 ///
 /// * `values` - An iterator of values to check
 fn is_set_legal<T: Iterator<Item = u32>>(values: T) -> bool {
-    let mut seen = HashSet::<u32>::with_capacity(9);
-    for val in values.filter(|i| *i != 0_u32) {
+    let mut seen: [bool; 10] = [false; 10];
+    for val in values {
         debug_assert!(val <= 9);
-        if !seen.insert(val) {
+        if val != 0 && seen[val as usize] {
             return false;
+        } else {
+            seen[val as usize] = true;
         }
     }
     true
