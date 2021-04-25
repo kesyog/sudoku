@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Grid","A container to hold a Sudoku grid."]]});
