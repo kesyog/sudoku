@@ -5,8 +5,8 @@
 //! ## Typical usage
 //!
 //! 1. Ingest an unsolved puzzle into a [`Grid`] using one of the available methods or trait
-//! implementations of `Grid`. Depending on the input type, `0` or `'0'` should be used to represent
-//! unfilled cells.
+//!    implementations of `Grid`. Depending on the input type, `0` or `'0'` should be used to
+//!    represent unfilled cells.
 //! 2. Call [`Grid::solve`] to find a solution.
 //! 3. Display the result using the [`Display`](std::fmt::Display) trait or access the values using
 //!    the [`Grid::as_slice`] method.
@@ -152,8 +152,7 @@ impl Grid {
 
         let mut boards_to_check = Vec::<Self>::with_capacity(100);
         boards_to_check.push(*self);
-        while !boards_to_check.is_empty() {
-            let mut board = boards_to_check.pop().unwrap();
+        while let Some(mut board) = boards_to_check.pop() {
             if board.is_solved() {
                 return Some(board);
             }
