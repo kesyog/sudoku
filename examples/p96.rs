@@ -8,7 +8,9 @@ use sudoku::Grid;
 fn get_first_three_digits(grid: &Grid) -> u32 {
     let solution = grid.solve().unwrap();
     let solution_digits = solution.as_slice();
-    solution_digits[0] * 100 + solution_digits[1] * 10 + solution_digits[2]
+    u32::from(solution_digits[0]) * 100
+        + u32::from(solution_digits[1]) * 10
+        + u32::from(solution_digits[2])
 }
 
 fn main() {
